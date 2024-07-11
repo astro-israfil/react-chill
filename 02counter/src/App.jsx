@@ -7,7 +7,9 @@ function App() {
 
   const increaseCount = () => {
     if (counter < 20) {
-      setCounter(counter + 1);
+      setCounter(prevCounter => prevCounter + 1);
+      setCounter(prevCounter => prevCounter + 1);
+      setCounter(prevCounter => prevCounter + 1);
     }
   }
 
