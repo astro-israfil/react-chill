@@ -21,14 +21,14 @@ function App() {
 
   useEffect(() => {
     setConvertedAmount(amount * currencyRate[converTo] || 0)
-  }, [amount, converTo, convertFrom])
+  }, [amount, converTo, currencyRate])
 
   return (
     <>
       <div style={{backgroundImage: `url("${backgroundImageUrl}")`}} className='w-full h-screen flex flex-col justify-center items-center  gap-8'>
 
         <h1 className='text-center text-4xl text-slate-200 font-bold'>Currency Converter</h1>
-        
+
         <div className='w-full max-w-xl relative bg-gradient-to-r from-cyan-500 to-blue-500 p-4 rounded'>
           <InputBox label='From' amount={amount} onAmountChange={(amnt) => setAmount(amnt)} currencyOptions={currencyOptions} selectedCurrency={convertFrom} onSelectedCurrencyChange={(currency) => setConvertFrom(currency)} />
 
